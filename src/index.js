@@ -4,6 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'mobx-react';
 import store from 'store/index';
 import App from './app';
+import 'antd/dist/antd.css';
 
 ReactDom.render(
   <AppContainer>

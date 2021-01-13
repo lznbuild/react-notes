@@ -13,6 +13,7 @@ const devConfig = {
     },
     open: true,
     openPage: appConfig.relativePrefix,
+    host: 'localhost',
     port: 9000,
     hot: true,
     overlay: {
