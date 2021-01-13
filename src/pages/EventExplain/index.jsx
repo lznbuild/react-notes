@@ -18,8 +18,14 @@ class EventExplain extends Component {
       console.log('parent 原生');
     });
 
-    document.querySelector('#child').addEventListener('click', () => {
+    document.querySelector('#child').addEventListener('click', (e) => {
+      // e.stopPropagation();
+
       console.log('child 原生');
+    });
+
+    document.addEventListener('click', () => {
+      console.log('document click');
     });
   }
 
@@ -32,7 +38,10 @@ class EventExplain extends Component {
     console.log('parent 合成');
   };
 
-  childClick = () => {
+  childClick = (e) => {
+    // e.stopPropagation();
+
+    // e.nativeEvent.stopImmediatePropagation();
     console.log('child 合成');
   };
 

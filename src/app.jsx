@@ -5,18 +5,18 @@ const IndexPage = React.lazy(() => import('pages/IndexPage'));
 const Lifecycle = React.lazy(() => import('pages/Lifecycle'));
 const SetState = React.lazy(() => import('pages/SetState'));
 const EventExplain = React.lazy(() => import('pages/EventExplain'));
-const Page404 = React.lazy(() => import('pages/Page404'));
 const KeyExplain = React.lazy(() => import('pages/KeyExplain'));
 const FormExplain = React.lazy(() => import('pages/FormExplain'));
 const HocExplain = React.lazy(() => import('pages/HocExplain'));
+const Page404 = React.lazy(() => import('pages/Page404'));
 /*
   IndexPage 基础部分
   Lifecyle 生命周期
   SetState setState的几种用法
-  eventExplain 关于合成事件和原生事件 
+  EventExplain 关于合成事件和原生事件 
   keyValue 关于遍历的key 
-  formExplain 表单部分 
-
+  FormExplain 表单部分 
+  HocExplain 高阶组件部分
 */
 
 class App extends React.Component {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import lifecycle1 from 'public/imgs/lifecycle-1.jpeg';
 import lifecycle2 from 'public/imgs/lifecycle-2.jpg';
 import './index.less';
@@ -22,10 +22,10 @@ class Lifecycle extends Component {
     console.log('parent componentDidMount');
   }
 
-  shouldComponentUpdate(nextProps) {
-    console.log('parent shouldComponentUpdate');
-    return true;
-  }
+  // shouldComponentUpdate(nextProps) {
+  //   console.log('parent shouldComponentUpdate');
+  //   return true;
+  // }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log('parent getSnapshotBeforeUpdate');

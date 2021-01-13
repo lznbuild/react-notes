@@ -43,10 +43,10 @@ class SetStateExplain extends Component {
   };
 
   handleAddNum3 = () => {
-    this.setState({ num: this.state.num + 1 });
+    this.setState((prevState) => ({ num: prevState.num + 1 }));
     console.log(this.state.num, '3');
 
-    this.setState((prevState) => ({ num: prevState.num + 1 }));
+    this.setState({ num: this.state.num + 1 });
     console.log(this.state.num, '3');
   };
 

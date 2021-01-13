@@ -66,3 +66,5 @@ function HocExtends(WrappedComponent) {
 
 export default HocExtends(HocExplain);
 // https://github.com/lznbuild/my-blog/issues/23
+
+//

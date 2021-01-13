@@ -75,6 +75,3 @@ export default IndexPage;
 
 // 频繁创建函数？？？？
 // https://www.zhihu.com/question/345689944
-
-// 看自己的blog 掘金的收藏  学习链接中的内容
-// class this
