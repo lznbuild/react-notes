@@ -15,7 +15,7 @@ class SetStateExplain extends Component {
     console.log(this.state.num, '1');
 
     // 修改操作不会叠加，过程异步
-    // 异步的原因： 性能
+    // 异步的原因： 性能 isPending
     // 同步情况 addEventListener 和setTimeout 不会触发react的批处理机制
   };
 

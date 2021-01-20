@@ -9,6 +9,8 @@ const KeyExplain = React.lazy(() => import('pages/KeyExplain'));
 const FormExplain = React.lazy(() => import('pages/FormExplain'));
 const HocExplain = React.lazy(() => import('pages/HocExplain'));
 const Page404 = React.lazy(() => import('pages/Page404'));
+const SplitExplain = React.lazy(() => import('pages/SplitExplain'));
+const ErrorExplain = React.lazy(() => import('pages/ErrorExplain'));
 /*
   IndexPage 基础部分
   Lifecyle 生命周期
@@ -32,6 +34,8 @@ class App extends React.Component {
             <Route exact path="/keyExplain" component={(props) => <KeyExplain {...props} />} />
             <Route exact path="/formExplain" component={(props) => <FormExplain {...props} />} />
             <Route exact path="/hocExplain" component={(props) => <HocExplain {...props} />} />
+            <Route exact path="/splitExplain" component={(props) => <SplitExplain {...props} />} />
+            <Route exact path="/errorExplain" component={(props) => <ErrorExplain {...props} />} />
             <Route path="/404" component={(props) => <Page404 {...props} />} />
             <Redirect to="/404" />
           </Switch>

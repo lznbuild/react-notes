@@ -22,10 +22,10 @@ class Lifecycle extends Component {
     console.log('parent componentDidMount');
   }
 
-  // shouldComponentUpdate(nextProps) {
-  //   console.log('parent shouldComponentUpdate');
-  //   return true;
-  // }
+  shouldComponentUpdate(nextProps) {
+    console.log('parent shouldComponentUpdate');
+    return true;
+  }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log('parent getSnapshotBeforeUpdate');
@@ -58,7 +58,7 @@ class Lifecycle extends Component {
   }
 }
 
-class ChildrenCom extends Component {
+class ChildrenCom extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {};
@@ -76,12 +76,11 @@ class ChildrenCom extends Component {
     console.log('child componentDidMount');
   }
 
-  shouldComponentUpdate(nextProps) {
-    console.log('child shouldComponentUpdate');
+  // shouldComponentUpdate(nextProps) {
+  //   console.log('child shouldComponentUpdate');
 
-    // return nextProps.numForChild !== this.props.numForChild;
-    return true;
-  }
+  //   return nextProps.numForChild !== this.props.numForChild;
+  // }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log('child getSnapshotBeforeUpdate');

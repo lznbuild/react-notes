@@ -23,10 +23,6 @@ class EventExplain extends Component {
 
       console.log('child 原生');
     });
-
-    document.addEventListener('click', () => {
-      console.log('document click');
-    });
   }
 
   handleAddNum = () => {
@@ -39,7 +35,7 @@ class EventExplain extends Component {
   };
 
   childClick = (e) => {
-    // e.stopPropagation();
+    e.stopPropagation();
 
     // e.nativeEvent.stopImmediatePropagation();
     console.log('child 合成');
