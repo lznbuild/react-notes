@@ -28,3 +28,6 @@ dist/
 Thumbs.db
 ehthumbs.db
 ._*
+
+zdt-utils/node_modules
+zdt-utils/dist
