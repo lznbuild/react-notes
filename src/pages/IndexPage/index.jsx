@@ -57,12 +57,9 @@ class ChildrenCom extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    console.log(this.props.children, 'vdom');
-  }
+  componentDidMount() {}
 
   render() {
-    console.log('children 执行');
     const { name } = this.props;
     return <div>children-{name}</div>;
   }

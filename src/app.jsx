@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { hasRepeat, isRepeat, getQueryParmas } from '@conan/zdt-utils';
 
 const IndexPage = React.lazy(() => import('pages/IndexPage'));
 const Lifecycle = React.lazy(() => import('pages/Lifecycle'));
@@ -11,6 +12,7 @@ const HocExplain = React.lazy(() => import('pages/HocExplain'));
 const Page404 = React.lazy(() => import('pages/Page404'));
 const SplitExplain = React.lazy(() => import('pages/SplitExplain'));
 const ErrorExplain = React.lazy(() => import('pages/ErrorExplain'));
+const HookExplain = React.lazy(() => import('pages/HooksExplain'));
 /*
   IndexPage 基础部分
   Lifecyle 生命周期
@@ -22,6 +24,11 @@ const ErrorExplain = React.lazy(() => import('pages/ErrorExplain'));
 */
 
 class App extends React.Component {
+  componentDidMount() {
+    console.log('===============');
+    console.log(hasRepeat([1, 1, 2]), isRepeat(3, [2, 3]));
+    console.log('===============');
+  }
   render() {
     return (
       <BrowserRouter>
@@ -36,6 +43,7 @@ class App extends React.Component {
             <Route exact path="/hocExplain" component={(props) => <HocExplain {...props} />} />
             <Route exact path="/splitExplain" component={(props) => <SplitExplain {...props} />} />
             <Route exact path="/errorExplain" component={(props) => <ErrorExplain {...props} />} />
+            <Route exact path="/hookExplain" component={(props) => <HookExplain {...props} />} />
             <Route path="/404" component={(props) => <Page404 {...props} />} />
             <Redirect to="/404" />
           </Switch>

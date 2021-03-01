@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<style>
+  div:nth-child(2n) {
+    color: red;
+  }
+</style>
+
 <body>
-  
+  <input type="file" id="input" accept="">
 </body>
+
 </html>
 <script>
-  
+  /*
+    describe: 找出string中所有[]的位置， 关于stirng中[]是否成对，数量逻辑由xxx校验
+    input: '[饥饿的]小猫馋得[留下了口水]'
+    output: [{left: 0, right: 4}, {left:9, right:15}]
+  */
+  function setPos(text) {
+    // 初始化posList 
+    const posList = [];
+
+    let startIndex = 0;
+
+    while (text.indexOf('[') >= 0 && text.indexOf(']') >= 0) {
+      const left = text.indexOf('[');
+      const right = text.substr(left).indexOf(']');
+      const pos = right <= -1 ? {
+        left: -1,
+        right: -1
+      } : { left: left + startIndex, right: right + left + startIndex }
+
+      posList.push(pos)
+      text = text.slice(right + left + 1)
+      startIndex = pos.right + 1;
+    }
+
+    return posList;
+  }
+
+  // const str = '解开了饥]饿的小猫馋得[留下';
+
+
+
+
+  function parseParseText(text, targets) {
+    if (targets && targets.length) {
+      targets.forEach(({offset, length})=> {
+        if (offset>=0 && length>=0) {
+          text.splice(offset,0, '[');
+          text.splice(offset+length+1 ,0, ']');
+        }
+      })
+    }
+
+    return text.join("");
+  }
+
+  var targets = [
+    {wordIndex: 0, offset: 0, length: 2},
+    {wordIndex: 0, offset: 9, length: 3},
+    {wordIndex: 0, offset: 19, length: 2}
+  ];
+
+  var str = '这里没有可爱的小动物,只有一头大象'.split('')
+
+  console.log(parseParseText(str, targets));
 </script>
