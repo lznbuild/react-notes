@@ -1,0 +1,11 @@
+{
+    "name": "zdt-utils",
+    "npmname": "@conan/zdt-utils",
+    "umdname": "@conan/zdt-utils",
+    "username": "luzongnan",
+    "type": "ts",
+    "module": "umd,esm,commonjs",
+    "test": null,
+    "lang": "zh",
+    "version": "1.6.0"
+}
